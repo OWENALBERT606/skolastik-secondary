@@ -10,6 +10,12 @@ import {
   Check, CheckCircle2, ChevronLeft, ChevronRight, DollarSign,
   Bell, Shield, ArrowRight, Menu, X, Phone, Mail, MapPin, Star, Clock, Loader2,
 } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Badge }  from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -301,11 +307,27 @@ function HeroSlider() {
               {slide.desc}
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/login">
-                <Button size="lg" className="text-white px-8 gap-2 hover:opacity-90 font-semibold" style={{ backgroundColor: "#e8a020", color: "#1e3a6e" }}>
-                  Get started free <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button size="lg" className="text-white px-8 gap-2 hover:opacity-90 font-semibold" style={{ backgroundColor: "#e8a020", color: "#1e3a6e" }}>
+                    Get started free <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-40">
+                  <DropdownMenuItem asChild>
+                    <Link href="/login" className="flex items-center gap-2 cursor-pointer w-full">
+                      <GraduationCap className="h-4 w-4" />
+                      Secondary
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="https://primary.skolastik.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 cursor-pointer w-full">
+                      <GraduationCap className="h-4 w-4" />
+                      Primary
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <a href="#features">
                 <Button size="lg" variant="outline" className="px-8 text-white border-white/40 hover:bg-white/10">
                   See features
@@ -604,10 +626,44 @@ export default function WelcomePage() {
 
           <div className="hidden md:flex items-center gap-3">
             <ThemeToggle />
-            <Link href="/login"><Button variant="ghost" size="sm">Sign in</Button></Link>
-            <Link href="/login">
-              <Button size="sm" style={{ backgroundColor: "#1e3a6e" }} className="hover:opacity-90 text-white">Get started</Button>
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm">Sign in</Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link href="/login" className="flex items-center gap-2 cursor-pointer">
+                    <GraduationCap className="h-4 w-4" />
+                    Secondary
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="https://primary.skolastik.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 cursor-pointer">
+                    <GraduationCap className="h-4 w-4" />
+                    Primary
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button size="sm" style={{ backgroundColor: "#1e3a6e" }} className="hover:opacity-90 text-white">Get started</Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link href="/login" className="flex items-center gap-2 cursor-pointer">
+                    <GraduationCap className="h-4 w-4" />
+                    Secondary
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="https://primary.skolastik.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 cursor-pointer">
+                    <GraduationCap className="h-4 w-4" />
+                    Primary
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           <div className="md:hidden flex items-center gap-2">
@@ -627,10 +683,44 @@ export default function WelcomePage() {
               </a>
             ))}
             <div className="flex gap-2 pt-2">
-              <Link href="/login" className="flex-1"><Button variant="outline" size="sm" className="w-full">Sign in</Button></Link>
-              <Link href="/login" className="flex-1">
-                <Button size="sm" className="w-full text-white" style={{ backgroundColor: "#1e3a6e" }}>Get started</Button>
-              </Link>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="sm" className="flex-1">Sign in</Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-40">
+                  <DropdownMenuItem asChild>
+                    <Link href="/login" className="flex items-center gap-2 cursor-pointer w-full">
+                      <GraduationCap className="h-4 w-4" />
+                      Secondary
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="https://primary.skolastik.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 cursor-pointer w-full">
+                      <GraduationCap className="h-4 w-4" />
+                      Primary
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button size="sm" className="flex-1 text-white" style={{ backgroundColor: "#1e3a6e" }}>Get started</Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-40">
+                  <DropdownMenuItem asChild>
+                    <Link href="/login" className="flex items-center gap-2 cursor-pointer w-full">
+                      <GraduationCap className="h-4 w-4" />
+                      Secondary
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="https://primary.skolastik.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 cursor-pointer w-full">
+                      <GraduationCap className="h-4 w-4" />
+                      Primary
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         )}
@@ -657,18 +747,34 @@ export default function WelcomePage() {
               <p className="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
                 Skolastik School Solutions is an all-in-one school management platform — academics, fees, staff, report cards, and parent communication in one place.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <Link href="/login">
-                  <Button size="lg" className="text-white px-8 gap-2 hover:opacity-90" style={{ backgroundColor: "#1e3a6e" }}>
+<div className="flex flex-wrap gap-3">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button size="lg" className="text-white px-8 gap-2 hover:opacity-90 font-semibold" style={{ backgroundColor: "#e8a020", color: "#1e3a6e" }}>
                     Get started free <ArrowRight className="h-4 w-4" />
                   </Button>
-                </Link>
-                <a href="#features">
-                  <Button size="lg" variant="outline" className="px-8 border-[#1e3a6e] text-[#1e3a6e] dark:border-blue-400 dark:text-blue-400 hover:bg-[#eef3fb] dark:hover:bg-blue-950/40">
-                    See features
-                  </Button>
-                </a>
-              </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-40">
+                  <DropdownMenuItem asChild>
+                    <Link href="/login" className="flex items-center gap-2 cursor-pointer w-full">
+                      <GraduationCap className="h-4 w-4" />
+                      Secondary
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="https://primary.skolastik.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 cursor-pointer w-full">
+                      <GraduationCap className="h-4 w-4" />
+                      Primary
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <a href="#features">
+                <Button size="lg" variant="outline" className="px-8 border-[#1e3a6e] text-[#1e3a6e] dark:border-blue-400 dark:text-blue-400 hover:bg-[#eef3fb] dark:hover:bg-blue-950/40">
+                  See features
+                </Button>
+              </a>
+            </div>
               <div className="flex flex-wrap gap-4 pt-2">
                 {["No setup fee", "Free onboarding", "Cancel anytime"].map(t => (
                   <div key={t} className="flex items-center gap-1.5 text-sm text-slate-600 dark:text-slate-400">
