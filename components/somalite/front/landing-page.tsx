@@ -638,7 +638,7 @@ export default function WelcomePage() {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="https://primary.skolastik.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 cursor-pointer">
+                  <a href="https://www.primary.skolastik.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 cursor-pointer">
                     <GraduationCap className="h-4 w-4" />
                     Primary
                   </a>
